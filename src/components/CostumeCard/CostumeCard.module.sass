@@ -1,0 +1,50 @@
+@import '../../styles/_variables.sass'
+
+// Основной контейнер
+.container
+  text-align: center
+  padding: $padding-base
+
+// Заголовок
+h2
+  font-family: $font-family-heading
+  font-size: 42px
+  font-weight: $font-weight-bold
+  line-height: 140%
+  color: $color
+  letter-spacing: 0
+  text-align: center
+
+// Изображение
+.image
+  width: 100%
+  max-width: 400px
+  height: auto
+  border-radius: $border-radius
+  margin-bottom: $padding-base
+
+// Описание костюма
+.description
+  font-size: $font-size-base
+  color: #333
+
+// Ссылка назад
+.backLink
+  display: inline-block
+  margin-top: $padding-base
+  padding: 10px 20px
+  background: $primary-color
+  color: #fff
+  text-decoration: none
+  border-radius: $border-radius
+  font-weight: bold
+
+  &:hover
+    background: darken($primary-color, 10%)
+
+// Когда костюм не найден
+.notFound
+  text-align: center
+  font-size: 24px
+  color: red
+  margin-top: 50px

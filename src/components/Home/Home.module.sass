@@ -1,0 +1,104 @@
+@import '../../styles/_mixins'
+@import '../../styles/_variables'
+
+.home
+  &:before
+    content: ""
+    position: absolute
+    width: 100%
+    height: 800px
+    background: rgb(250, 250, 250)
+    border-bottom-left-radius: 300px;
+    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.04)
+    z-index: -1
+
+.main
+  display: flex
+  justify-content: space-between
+  align-items: flex-start
+  width: 100%
+  max-width: 1200px
+  margin: 0 auto
+  height: 800px
+
+  &__title__container
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+
+  &__title
+    font-family: 'MontserratAlternates', sans-serif
+    font-size: 52px
+    font-weight: 700
+    line-height: 140%
+    color: #041A3F
+    width: 613px
+    display: flex
+    flex-direction: column
+    margin-bottom: 50px
+    margin-top: 150px
+
+  .title__highlight
+    color: #FFCA33
+
+  img
+    max-width: 100%
+    height: auto
+    background-image: url('../../assets/images/pattern.png')
+    background-size: 585px
+    background-repeat: no-repeat
+    background-position: center
+
+
+
+  button
+    width: 258px
+    border: none
+    border-radius: 4px
+    padding: 12px 24px
+    font-family: 'MontserratAlternates', sans-serif
+    font-size: 18px
+    font-weight: 700
+    line-height: 22px;
+    text-align: center;
+    background: #FFCA33
+    color: white
+    cursor: pointer
+    &:hover
+      background: darken(#FFCA33, 10%)
+
+.costumeSection
+  max-width: 1200px
+  margin: 0 auto
+  padding: 40px 20px
+  text-align: center
+
+.title_costume
+  font-size: 32px
+  font-weight: 700
+  margin-bottom: 65px
+  color: #041A3F
+
+.costumeGrid
+  display: grid
+  grid-template-columns: repeat(4, 1fr) // 4 колонки по умолчанию
+  gap: 20px
+  justify-content: center
+
+  +media($xl)
+    grid-template-columns: repeat(4, 1fr) // 4 карточки
+
+  +media($lg)
+    grid-template-columns: repeat(3, 1fr) // 3 карточки
+
+  +media($md)
+    grid-template-columns: repeat(3, 1fr) // 3 карточки
+
+  +media($sm)
+    grid-template-columns: repeat(2, 1fr) // 2 карточки
+
+  +media($xs)
+    grid-template-columns: repeat(2, 1fr) // 2 карточки
+
+  +media($xxs)
+    grid-template-columns: repeat(1, 1fr) // 1 карточка

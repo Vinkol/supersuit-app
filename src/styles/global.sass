@@ -1,0 +1,61 @@
+@font-face
+  font-family: 'MontserratAlternates'
+  src: url('../assets/fonts/MontserratAlternates-Regular.woff2') format('woff2'),
+  url: ('../assets/fonts/MontserratAlternates-Regular.woff') format('woff')
+  font-weight: normal
+  font-style: normal
+
+@font-face
+  font-family: 'MontserratAlternates'
+  src: url('../assets/fonts/MontserratAlternates-Bold.woff2') format('woff2'),
+  url: ('../assets/fonts/MontserratAlternates-Bold.woff') format('woff')
+  font-weight: bold
+  font-style: normal
+
+@font-face
+  font-family: 'MontserratAlternates'
+  src: url('../assets/fonts/MontserratAlternates-ExtraBold.woff2') format('woff2'),
+  url: ('../assets/fonts/MontserratAlternates-ExtraBold.woff') format('woff')
+  font-weight: 800
+  font-style: normal
+
+@import '_variables'
+@import 'reset'
+@import '_mixins'
+
+body
+  position: relative
+
+  &::before
+    content: ""
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background: #EFF5FF url('../assets/images/pattern.png') repeat
+    background-size: 200px
+    opacity: 0.6
+    z-index: -1
+
+    
+
+.costume-list
+  display: flex
+  gap: 20px
+  flex-wrap: wrap
+
+.costume-card
+  border: 1px solid #ddd
+  padding: 10px
+  text-align: center
+  text-decoration: none
+  color: black
+  width: 200px
+
+  img
+    width: 100%
+    height: auto
+
+  &:hover
+    border-color: #3498db
