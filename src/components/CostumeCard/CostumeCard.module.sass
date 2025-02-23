@@ -1,50 +1,169 @@
-@import '../../styles/_variables.sass'
+@import '../../styles/variables'
+@import '../../styles/_mixins'
 
-// Основной контейнер
-.container
-  text-align: center
-  padding: $padding-base
-
-// Заголовок
-h2
-  font-family: $font-family-heading
-  font-size: 42px
-  font-weight: $font-weight-bold
-  line-height: 140%
-  color: $color
-  letter-spacing: 0
-  text-align: center
-
-// Изображение
-.image
-  width: 100%
-  max-width: 400px
-  height: auto
-  border-radius: $border-radius
-  margin-bottom: $padding-base
-
-// Описание костюма
-.description
-  font-size: $font-size-base
-  color: #333
-
-// Ссылка назад
-.backLink
-  display: inline-block
-  margin-top: $padding-base
-  padding: 10px 20px
-  background: $primary-color
-  color: #fff
-  text-decoration: none
-  border-radius: $border-radius
-  font-weight: bold
-
-  &:hover
-    background: darken($primary-color, 10%)
-
-// Когда костюм не найден
 .notFound
+  display: flex
+  justify-content: center
+  align-items: center
+  height: 80vh
   text-align: center
+  font-family: $font-family-base
+  font-size: 32px
+  font-weight: 700
+  line-height: 140%
+  color: #041A3F
+
+.container
+  max-width: 1200px
+  margin: 0 auto
+  padding: 20px
+
+.breadcrumbs
+  margin: 32px 0
+  font-family: $font-family-base
+  font-size: 14px
+  font-weight: 400
+  line-height: 160%
+  color: #000
+  a
+    color: #888
+    text-decoration: none
+    &:hover
+      text-decoration: underline
+
+.content
+  display: flex
+  gap: 122px
+  margin-top: 20px
+
+.gallery
+  display: flex
+  gap: 20px
+
+.thumbnails
+  display: flex
+  flex-direction: column
+  gap: 16px
+  img
+    width: 82px
+    height: 100px
+    object-fit: cover
+    cursor: pointer
+    border-radius: 8px
+    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.1)
+    &:hover
+      border: 2px solid #ffa500
+
+.mainImage img
+  box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.1)
+  background: rgb(255, 255, 255)
+  width: 490px
+  height: auto
+  border-top-right-radius: 10%
+  border-bottom-right-radius: 10%
+
+.info
+  margin: 47px 0
+  display: flex
+  flex-direction: column
+  // align-items: flex-start
+
+.title
+  font-family: 'MontserratAlternates'
+  font-size: 52px
+  font-weight: 700
+  line-height: 140%
+  letter-spacing: 0%
+  text-align: center
+  color: #162c54
+
+.article
+  font-family: 'MontserratAlternates'
+  margin-top: 12px
+  font-size: 14px
+  color: #888
+
+.price
+  font-family: 'MontserratAlternates'
+  margin: 24px 0
   font-size: 24px
-  color: red
-  margin-top: 50px
+  font-weight: bold
+  color: #ffa500
+
+.boldTitle
+  display: flex
+  flex-direction: column
+  gap: 9px
+  color: rgba(4, 26, 63, 0.8)
+  font-family: 'MontserratAlternates'
+  font-size: 16px
+  font-weight: 400
+  line-height: 160%
+  strong
+    color: rgb(4, 26, 63)
+    font-family: 'MontserratAlternates'
+    font-size: 24px
+    font-weight: 700
+    line-height: 140%
+
+.boldText
+  margin: 24px 0
+  display: flex
+  flex-direction: column
+  gap: 9px
+  color: rgba(4, 26, 63, 0.8)
+  font-family: 'MontserratAlternates'
+  font-size: 16px
+  font-weight: 400
+  line-height: 160%
+  strong
+    color: rgb(4, 26, 63)
+    font-family: 'MontserratAlternates'
+    font-size: 24px
+    font-weight: 700
+    line-height: 140%
+
+.orderButton
+  border-radius: 4px
+  background: rgb(247, 189, 41)
+  color: #FFFFFF
+  padding: 13px 40px
+  border: none
+  font-size: 18px
+  font-weight: 700
+  line-height: 22px
+  cursor: pointer
+  transition: background 0.3s
+  &:hover
+    background-color: #e69500
+
+.stock
+  margin-top: 8px
+  color: rgba(4, 26, 63, 0.6)
+  font-family: 'MontserratAlternates'
+  font-size: 16px
+  font-weight: 400
+  line-height: 160%
+  text-align: center
+
+.outOfStock
+  color: #e13131b4
+
+.descriptionBlock
+  margin-top: 40px
+
+.descriptionTitle
+  margin-top: 48px
+  font-family: 'MontserratAlternates'
+  font-size: 24px
+  font-weight: 800
+  line-height: 29px
+  color: rgb(4, 26, 63)
+
+.description
+  margin-top: 16px
+  font-family: 'MontserratAlternates'
+  font-size: 16px
+  font-weight: 400
+  line-height: 160%
+  color: rgba(4, 26, 63, 0.8)
