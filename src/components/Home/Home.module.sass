@@ -2,15 +2,15 @@
 @import '../../styles/_variables'
 
 .home
+  position: relative
+  width: 100%
   &:before
     content: ""
     position: absolute
     width: 100%
     height: 800px
     background: rgb(250, 250, 250)
-    border-bottom-left-radius: 300px;
-    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.04)
-    z-index: -1
+    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.05)
 
 .main
   display: flex
@@ -20,11 +20,14 @@
   max-width: 1200px
   margin: 0 auto
   height: 800px
+  position: relative
+  z-index: 1
 
   &__title__container
     display: flex
     flex-direction: column
     align-items: flex-start
+    margin-top: 180px
 
   &__title
     font-family: 'MontserratAlternates', sans-serif
@@ -36,20 +39,18 @@
     display: flex
     flex-direction: column
     margin-bottom: 50px
-    margin-top: 150px
 
   .title__highlight
     color: #FFCA33
 
+  .logo
+    transition: transform 0.2s ease
+    width: 800px
+
   img
-    max-width: 100%
-    height: auto
     background-image: url('../../assets/images/pattern.png')
-    background-size: 585px
     background-repeat: no-repeat
     background-position: center
-
-
 
   button
     width: 258px
@@ -59,16 +60,19 @@
     font-family: 'MontserratAlternates', sans-serif
     font-size: 18px
     font-weight: 700
-    line-height: 22px;
-    text-align: center;
+    line-height: 22px
+    text-align: center
     background: #FFCA33
     color: white
     cursor: pointer
+    transition: transform 0.3s ease-in-out
     &:hover
       background: darken(#FFCA33, 10%)
+      transform: scale(1.05)
 
 .costumeSection
   max-width: 1200px
+  width: 100%
   margin: 0 auto
   padding: 40px 20px
   text-align: center
@@ -86,20 +90,121 @@
   gap: 20px
   justify-content: center
 
-  +media($xl)
+// Адаптивность для всей страницы
+
+// Адаптивность под большие экраны (xl) 1440px
+@include media($xl)
+  .home
+    &:before
+      height: 700px
+
+  .main
+    width: 100%
+    max-width: 1440px
+    height: 100%
+    max-height: 730px
+
+    &__title__container
+      max-width: 613px
+      max-height: 315px
+      margin-left: 118px
+
+  .logo
+    width: auto
+
+  .costumeGrid
+    grid-template-columns: repeat(5, 1fr) // 5 карточек
+
+  .costumeGrid
     grid-template-columns: repeat(4, 1fr) // 4 карточки
 
-  +media($lg)
+  .title_costume
+    font-size: 36px
+
+// Адаптивность под большие экраны (lg) 1024px
+@include media($lg)
+
+  .home
+    &:before
+      height: 630px
+
+  .main
+    width: 100%
+    max-width: 1024px
+    height: 100%
+    max-height: 630px
+
+    &__title__container
+      max-width: 613px
+      max-height: 315px
+      margin-left: 10px
+
+  .costumeGrid
     grid-template-columns: repeat(3, 1fr) // 3 карточки
 
-  +media($md)
-    grid-template-columns: repeat(3, 1fr) // 3 карточки
 
-  +media($sm)
+
+// Адаптивность под средние экраны (md) 960px
+@include media($md)
+
+  .home
+    &:before
+      height: 630px
+
+  .main
+    width: 100%
+    max-width: 960px
+    height: 100%
+    max-height: 630px
+
+  .costumeGrid
     grid-template-columns: repeat(2, 1fr) // 2 карточки
 
-  +media($xs)
+
+// Адаптивность под маленькие экраны (sm) 768px
+@include media($sm)
+  .main
+    flex-direction: column-reverse
+    align-items: center
+    height: auto
+
+  .costumeGrid
     grid-template-columns: repeat(2, 1fr) // 2 карточки
 
-  +media($xxs)
-    grid-template-columns: repeat(1, 1fr) // 1 карточка
+  
+
+
+
+// Адаптивность под экраны с маленьким разрешением (xs) 640px
+@include media($xs)
+  .main
+    flex-direction: column-reverse
+    align-items: center
+    height: auto
+
+  .costumeGrid
+    grid-template-columns: 1fr // 1 карточка
+
+  
+
+
+// Адаптивность под самые маленькие экраны (xxs) 320px
+@include media($xxs)
+  .main
+    flex-direction: column-reverse
+    align-items: center
+    height: auto
+
+  .costumeGrid
+    grid-template-columns: 1fr // 1 карточка
+
+  .title_costume
+    font-size: 16px
+    margin: 20px 0
+
+  .main__title
+    font-size: 24px
+    margin-top: 40px
+
+  .main__title__container
+    text-align: center
