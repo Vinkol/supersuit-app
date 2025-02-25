@@ -9,18 +9,18 @@ import "./styles/global.sass";
 
 function App() {
   return (
-    <div className="wrapper">
-      <Router>
+    <Router>
+      
         <Header />
-        <main className="main">
+        
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/costume/:id" element={<CostumeCard />} />
           </Routes>
-        </main>
-          <Footer />
-      </Router>
-    </div>
+        
+        <Footer />
+      
+    </Router>
   );
 }
 

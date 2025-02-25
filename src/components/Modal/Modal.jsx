@@ -72,6 +72,7 @@ const Modal = ({ isOpen, onClose, costume }) => {
                 onChange={handleInputChange}
                 placeholder="Как вас зовут?"
                 required
+                onInvalid={(e) => e.preventDefault()}
                 />
                 {errors.name && <span className={styles.error}>{errors.name}</span>}
             </div>
@@ -84,6 +85,7 @@ const Modal = ({ isOpen, onClose, costume }) => {
                 onChange={handleInputChange}
                 placeholder="+7 (977) 325-41-60"
                 required
+                onInvalid={(e) => e.preventDefault()}
                 />
                 {errors.phone && <span className={styles.error}>{errors.phone}</span>}
             </div>
@@ -97,6 +99,7 @@ const Modal = ({ isOpen, onClose, costume }) => {
                 min="1"
                 placeholder="На сколько дней арендуете?"
                 required
+                onInvalid={(e) => e.preventDefault()}
                 />
                  {errors.days && <span className={styles.error}>{errors.days}</span>}
             </div>
@@ -108,6 +111,7 @@ const Modal = ({ isOpen, onClose, costume }) => {
                 checked={agree}
                 onChange={handleInputChange}
                 required
+                onInvalid={(e) => e.preventDefault()}
                 />
                 <p className={styles.checkboxText}>Я согласен на обработку моих персональных данных</p>
                 {errors.agree && <span className={styles.error}>{errors.agree}</span>}
